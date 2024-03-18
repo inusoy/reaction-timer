@@ -1,15 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ResultsPage />
+  <BlockComponent />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BlockComponent from './components/BlockComponent.vue';
+import ResultsPage from './components/ResultsPage.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BlockComponent,
+    ResultsPage
   }
 }
 </script>
