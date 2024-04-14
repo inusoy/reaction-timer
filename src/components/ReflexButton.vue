@@ -6,17 +6,15 @@
 
 <script>
 export default {
-    data() {
-        return {
-            isButtonVisible: true,
+    props: {
+        isButtonVisible: {
+            type: Boolean,
         }
-    },
+    }
+    ,
     methods: {
-        toggleDisplay() {
-            this.isButtonVisible = !this.isButtonVisible
-        },
         buttonPressed() {
-            this.$emit('buttonPressed')
+            this.$emit('reflexButtonClicked')
         }
     }
 }

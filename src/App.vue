@@ -1,7 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <GameDescription />
-  <ReflexButton ref="reflexButton" @buttonPressed="controlGame" />
+  <ReflexButton :isButtonVisible="buttonVisible" @reflexButtonClicked="controlGame" />
   <ResultsBlock v-if="result !== 0" :result=this.result />
 </template>
 
@@ -23,6 +23,7 @@ export default {
       result: 0,
       gameRunning: false,
       startingTime: 0,
+      buttonVisible: true
     }
   },
   methods: {
@@ -46,11 +47,8 @@ export default {
     getRandomInRange(min, max) {
       return Math.random() * (max - min) + min;
     },
-    toggleButton() { //done with chatGPT
-      const reflexButtonComponent = this.$refs.reflexButton; // Accessing the ReflexButton component instance
-      if (reflexButtonComponent) {
-        reflexButtonComponent.toggleDisplay(); // Calling the toggleDisplay() method of the ReflexButton component
-      }
+    toggleButton() { 
+      this.buttonVisible = !this.buttonVisible
     },
 
   }
